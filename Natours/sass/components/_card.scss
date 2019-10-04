@@ -1,0 +1,58 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+
+  &__side {
+    transition: all .8s;
+
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: .3rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    height: 50rem;
+
+    &--front {
+      background-color: rgba($color-white, 0.6);
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-yellow-light, $color-yellow-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  &__title {
+    font-size: 4rem;
+    height: 10rem;
+    margin-bottom: .5rem;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.7),
+      rgba($color-primary-dark, 0.7)
+      ), url(../img/nat-5.jpg);
+    background-size: cover;
+    background-position: top;
+    color: $color-white;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+}
